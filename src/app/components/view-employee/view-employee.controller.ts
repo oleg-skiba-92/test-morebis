@@ -27,11 +27,11 @@ export class ViewEmployeeController implements ng.IComponentController {
         this.utilsService.changeTitle(employee.fullName);
         this.employee = employee;
         this.$scope.$apply();
-        this.utilsService.startLoader();
+        this.utilsService.stopLoader();
       })
       .catch((error: IresponseError) => {
         this.$state.go('notFound');
-        this.utilsService.startLoader();
+        this.utilsService.stopLoader();
       })
   }
 }

@@ -30,12 +30,12 @@ export class LoginController implements ng.IComponentController {
     this.authService
       .login(this.formModel)
       .then(() => {
-        this.utilsService.startLoader();
+        this.utilsService.stopLoader();
         this.$state.go('employees')
       })
       .catch((error: IresponseError) => {
         this.error = error.message;
-        this.utilsService.startLoader();
+        this.utilsService.stopLoader();
         this.$scope.$apply();
       })
   }
