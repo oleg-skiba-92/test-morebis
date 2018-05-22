@@ -1,0 +1,11 @@
+.login {
+
+  form {
+    max-width: 300px;
+    margin: 0 auto;
+  }
+
+  &_error {
+    color: red;
+  }
+}

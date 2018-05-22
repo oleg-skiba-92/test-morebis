@@ -1,0 +1,38 @@
+<md-content class="login">
+
+  <div layout="column" layout-align="center center">
+    <h1>Welcome bro</h1>
+    <p>username: admin<br>password: admin</p>
+  </div>
+
+  <form name="loginForm"
+        ng-submit="loginForm.$valid && $ctrl.submitForm()">
+
+    <p class="login_error" ng-if="$ctrl.error">
+      {{::$ctrl.error}}
+    </p>
+
+    <form-input
+        form="loginForm"
+        name="'Username'"
+        model="$ctrl.formModel.username"
+        required="true"
+        label="'Username'"
+    ></form-input>
+
+    <form-input
+        form="loginForm"
+        name="'password'"
+        model="$ctrl.formModel.password"
+        required="true"
+        label="'Password'"
+        type="'password'"
+    ></form-input>
+
+    <div layout="row" layout-align="center center">
+      <md-button type="submit" class="md-button md-raised md-primary">
+        Sign In
+      </md-button>
+    </div>
+  </form>
+</md-content>

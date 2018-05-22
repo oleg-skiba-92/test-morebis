@@ -1,0 +1,28 @@
+<md-content class="view-employee" layout-padding="">
+  <div class="view-employee_block">
+    <div class="view-employee_label">Department:</div>
+    <div class="view-employee_data">
+      {{::$ctrl.employee.department.title}}
+    </div>
+  </div>
+
+  <div class="view-employee_block">
+    <div class="view-employee_label">Full name:</div>
+    <div class="view-employee_data">
+      {{::$ctrl.employee.fullName}}
+    </div>
+  </div>
+
+  <div class="view-employee_block">
+    <div class="view-employee_label">Notes:</div>
+    <div class="view-employee_data">
+      {{::$ctrl.employee.notes}}
+    </div>
+  </div>
+
+  <div class="view-employee_actions">
+    <md-button class="md-button md-raised" ui-sref="employees">
+      Back
+    </md-button>
+  </div>
+</md-content>

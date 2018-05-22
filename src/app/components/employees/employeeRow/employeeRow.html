@@ -1,0 +1,15 @@
+<div class="employees-table_id-row" ui-sref="viewEmployee({employeeId: $ctrl.employee.id})">
+  {{$ctrl.employee.id}}
+</div>
+<div class="employees-table_employee-row" ui-sref="viewEmployee({employeeId: $ctrl.employee.id})">
+  {{$ctrl.employee.fullName}}
+</div>
+<div class="employees-table_department-row">
+  {{$ctrl.employee.department.title}}
+</div>
+<div class="employees-table_edit-row">
+  <md-button ui-sref="editEmployee({employeeId: $ctrl.employee.id})" class="md-raised md-primary">Edit</md-button>
+</div>
+<div class="employees-table_delete-row">
+  <md-button class="md-raised md-primary" confirm-employee-delete ng-click="$ctrl.onDelete()">Delete</md-button>
+</div>

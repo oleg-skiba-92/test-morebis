@@ -1,0 +1,19 @@
+<div layout="row" layout-align="center center">
+  <md-button
+      class="md-fab md-raised"
+      ng-disabled="$ctrl.currentPage <= 1"
+      ng-click="$ctrl.changePage($ctrl.currentPage-1)"
+  ><</md-button>
+  <md-button
+      class="md-fab md-raised"
+      ng-class="{'md-primary':$ctrl.currentPage == $index+1}"
+      ng-repeat="item in $ctrl.fakeArr track by $index"
+      ng-click="$ctrl.changePage($index+1)"
+  >{{$index+1}}
+  </md-button>
+  <md-button
+      class="md-fab md-raised"
+      ng-disabled="$ctrl.currentPage >= $ctrl.maxPage"
+      ng-click="$ctrl.changePage($ctrl.currentPage+1)"
+  >></md-button>
+</div>

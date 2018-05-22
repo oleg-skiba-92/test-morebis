@@ -1,0 +1,18 @@
+<md-input-container class="md-block">
+
+  <label>{{$ctrl.label}}:</label>
+
+  <input
+      name="{{$ctrl.name}}"
+      type="{{$ctrl.type}}"
+      md-maxlength="$ctrl.maxLength"
+      ng-required="$ctrl.required"
+      ng-model="$ctrl.model"
+  >
+
+  <div ng-messages="$ctrl.form[$ctrl.name].$error">
+    <div ng-message="required">"{{$ctrl.label}}" is required.</div>
+    <div ng-message="md-maxlength">The "{{$ctrl.label}}" must be less than {{$ctrl.maxLength}} characters long.</div>
+  </div>
+
+</md-input-container>

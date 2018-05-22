@@ -1,0 +1,21 @@
+<md-input-container class="md-block">
+
+  <label>{{$ctrl.label}}:</label>
+
+  <md-select
+      name="{{$ctrl.name}}"
+      ng-model="$ctrl.model"
+      ng-model-options="{trackBy: '$value.id'}"
+      ng-required="$ctrl.required">
+
+    <md-option ng-repeat="option in $ctrl.options" ng-value="option">
+      {{option.title}}
+    </md-option>
+
+  </md-select>
+
+  <div ng-messages="$ctrl.form[$ctrl.name].$error">
+    <div ng-message="required">"{{$ctrl.label}}" is required.</div>
+  </div>
+
+</md-input-container>

@@ -1,0 +1,18 @@
+<md-input-container class="md-block">
+
+  <label>{{$ctrl.label}}:</label>
+
+  <textarea
+      md-maxlength="$ctrl.maxLength"
+      ng-required="$ctrl.required"
+      name="{{$ctrl.name}}"
+      ng-model="$ctrl.model"
+      rows="5"
+  ></textarea>
+
+  <div ng-messages="$ctrl.form[$ctrl.name].$error">
+    <div ng-message="required">"{{$ctrl.label}}" is required.</div>
+    <div ng-message="md-maxlength">The "{{$ctrl.label}}" must be less than {{$ctrl.maxLength}} characters long.</div>
+  </div>
+
+</md-input-container>

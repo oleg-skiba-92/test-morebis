@@ -1,0 +1,43 @@
+<md-content class="edit-employee" layout-padding>
+  <form name="editEmployeeForm"
+        ng-submit="editEmployeeForm.$valid && $ctrl.submitForm()">
+
+    <form-select
+        form="editEmployeeForm"
+        name="'department'"
+        model="$ctrl.formModel.department"
+        required="true"
+        label="'Department'"
+        options="$ctrl.departments"
+    ></form-select>
+
+    <form-input
+        form="editEmployeeForm"
+        name="'fullName'"
+        max-length="30"
+        model="$ctrl.formModel.fullName"
+        required="true"
+        label="'Full name'"
+    ></form-input>
+
+    <form-textarea
+        form="editEmployeeForm"
+        name="'notes'"
+        max-length="300"
+        model="$ctrl.formModel.notes"
+        required="false"
+        label="'Notes'"
+    ></form-textarea>
+
+    <div class="edit-employee_actions">
+      <md-button type="submit" class="md-button md-raised md-primary">
+        Save
+      </md-button>
+
+      <md-button class="md-button md-raised" ui-sref="employees">
+        Cancel
+      </md-button>
+    </div>
+
+  </form>
+</md-content>

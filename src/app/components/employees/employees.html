@@ -1,0 +1,58 @@
+<md-content class="employees" layout-padding>
+
+  <div class="employees-actions" layout-gt-xs="row" layout-align-gt-xs="space-between">
+    <form-input
+        name="'search'"
+        model="$ctrl.searchFilter"
+        label="'Search for employee'"
+    ></form-input>
+
+    <form-select
+        name="'department'"
+        model="$ctrl.departmentFilter"
+        label="'Department'"
+        options="$ctrl.departments"
+    ></form-select>
+
+    <div layout-align="center center" layout="row">
+      <md-button class="md-button md-raised md-primary" ui-sref="createEmployee">
+        Add
+      </md-button>
+    </div>
+  </div>
+
+  <div class="employees-table">
+
+    <div class="employees-table_heading">
+      <div class="employees-table_id-row">#</div>
+      <div class="employees-table_employee-row">Employee</div>
+      <div class="employees-table_department-row">Department</div>
+      <div class="employees-table_edit-row">Edit</div>
+      <div class="employees-table_delete-row">Delete</div>
+    </div>
+
+    <div class="employees-table_body">
+      <employee-row
+          ng-repeat="employee in filteredResult = ($ctrl.employees
+          | filter:{department: {id: $ctrl.departmentFilter.id}}:true
+          | filter:{fullName: $ctrl.searchFilter})
+          | limitTo:$ctrl.pageSize:($ctrl.currentPage-1)*$ctrl.pageSize"
+          employee="employee"
+          on-delete="$ctrl.deleteEmployee(employee.id)"
+          class="employees-table_row"
+      ></employee-row>
+      <div class="employees-table_not-found" ng-if="!filteredResult.length" layout-align="center center">
+        Employees not found
+      </div>
+    </div>
+
+  </div>
+
+  <div class="employees-pagination">
+    <paginate
+        current-page="$ctrl.currentPage"
+        page-size="$ctrl.pageSize"
+        total-count="filteredResult.length || 0"
+    ></paginate>
+  </div>
+</md-content>

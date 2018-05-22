@@ -1,0 +1,75 @@
+.employees-actions {
+  form-input,
+  form-select {
+    flex: 1;
+    padding-right: 10px;
+  }
+}
+
+.employees-table {
+
+  &_row,
+  &_heading,
+  &_not-found {
+    display: flex;
+    height: 60px;
+    border-bottom: 1px solid rgba(0, 0, 0, 0.6);
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+    border-left: 1px solid rgba(0, 0, 0, 0.6);
+  }
+
+  &_heading {
+    border-top: 1px solid rgba(0, 0, 0, 0.6);
+    font-weight: bold;
+  }
+
+  &_id-row,
+  &_employee-row,
+  &_department-row,
+  &_edit-row,
+  &_delete-row {
+    align-items: center;
+    justify-content: center;
+    display: flex;
+    padding: 0 10px;
+  }
+
+  &_id-row,
+  &_employee-row,
+  &_department-row,
+  &_edit-row {
+    border-right: 1px solid rgba(0, 0, 0, 0.6);
+  }
+
+  &_edit-row,
+  &_delete-row {
+    width: 100px;
+
+    .md-button {
+      margin: 0;
+    }
+  }
+
+  &_employee-row {
+    flex: 3;
+  }
+
+  &_department-row {
+    flex: 2;
+  }
+
+  &_id-row {
+    width: 25px;
+  }
+
+  &_id-row,
+  &_employee-row {
+    cursor: pointer;
+  }
+
+  &_body {
+    .employees-table_employee-row {
+      justify-content: normal;
+    }
+  }
+}
